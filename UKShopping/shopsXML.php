@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"]=="GET")
 	elseif (isset($_GET['location']))
 		$url .= " WHERE shopLocation LIKE '%" . $_GET['location'] . "%'";
 	
-	$conn = mysqli_connect("localhost", "root", "admin","wsax");
+	$conn = mysqli_connect("exampleDBaddress", "exampleDBusername", "exampleDBpassword","exampleDBtable");
 	if (mysqli_connect_errno())
 		echo mysqli_connect_errno();
 	
@@ -73,7 +73,7 @@ elseif ($_SERVER['REQUEST_METHOD']=="POST")
 		$url = "INSERT INTO `shops`(`shopName`, `shopType`, `shopLocation`) VALUES ('".$names[$i]."','".$types[$i]."','".$locations[$i]."')";
 	}
 
-	$conn = mysqli_connect("localhost", "root", "admin","wsax");
+	$conn = mysqli_connect("exampleDBaddress", "exampleDBusername", "exampleDBpassword","exampleDBtable");
 	mysqli_query($conn,$url);
 	if (!$result) 
 	{
@@ -87,7 +87,7 @@ elseif ($_SERVER['REQUEST_METHOD']=="POST")
 elseif ($_SERVER["REQUEST_METHOD"]=="DELETE")
 {
 	$url = "DELETE FROM `shops` WHERE shopID = ".$_GET['id'];
-	$conn = mysqli_connect("localhost", "root", "admin","wsax");
+	$conn = mysqli_connect("exampleDBaddress", "exampleDBusername", "exampleDBpassword","exampleDBtable");
 	
 	mysqli_query($conn,$url);
 	if (!$result) 
@@ -114,7 +114,7 @@ elseif ($_SERVER["REQUEST_METHOD"]=="PUT")
 			$url = "UPDATE shops SET `shopName`='" . $names[$i] . "', `shopType`='" . $types[$i] . "', `shopLocation`='" . $locations[$i] . "' WHERE `shopID`=" . $_GET['id'];
 
 			"INSERT INTO `shops`(`shopName`, `shopType`, `shopLocation`) VALUES (".$names[$i].",".$types[$i].",".$locations[$i].")";
-			$conn = mysqli_connect("localhost", "root", "admin","wsax");
+			$conn = mysqli_connect("exampleDBaddress", "exampleDBusername", "exampleDBpassword","exampleDBtable");
 			$result = mysqli_query($conn,$url);
 			if (!$result) 
 			{

@@ -5,7 +5,7 @@ if (isset($_GET['location']))
 	$url = "SELECT * FROM shops WHERE shopLocation = '" . $_GET['location'] . "'";
 else 
 	$url = "SELECT * FROM shops";
-$conn = mysqli_connect("localhost", "root", "admin","wsax");
+$conn = mysqli_connect("exampleDBaddress", "exampleDBusername", "exampleDBpassword","exampleDBtable");
 if (mysqli_connect_errno())
 	echo mysqli_connect_errno();
 
