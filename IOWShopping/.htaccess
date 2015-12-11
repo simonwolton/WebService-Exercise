@@ -1,0 +1,7 @@
+RewriteEngine On 
+RewriteRule ^type/([^/\.]+)/?$ type.php?type=$1
+#RewriteRule ^shop/([^/\.]+)/([^/\.]+)/?$ viewShop.php?type=$1&name=$2
+#RewriteRule ^shop/([^/\.]+)/?$ viewShop.php?name=$1
+RewriteRule ^shop/([^/\.]+)/?$ viewShop.php?id=$1
+RewriteRule ^edit/([^/\.]+)/?$ editShop.php?id=$1
+RewriteRule ^delete/([^/\.]+)/?$ deleteShop.php?id=$1 

@@ -1,0 +1,4 @@
+TODO:
+type.php gets given all results when calling webservice, but only 1 result when user views it directly
+make addshop, type, viewshop etc all use ajax
+create login using ajax
